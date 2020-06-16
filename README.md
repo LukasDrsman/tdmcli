@@ -74,5 +74,5 @@ task with date::n::2020-6-19-13-35
 important task::i
 done::d
 ```
-will render as: <br>
+⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆⯆ <br>
 ![preview](https://github.com/LukasDrsman/tdmcli/blob/master/preview.png)
