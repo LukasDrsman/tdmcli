@@ -1,0 +1,16 @@
+#!/bin/sh
+
+dir=$(pwd)
+echo "Installing tdmcli..."
+if [ -d "/usr/lib/tdmcli" ]; then
+    cp $dir/*.py /usr/lib/tdmcli/
+    cp $dir/tdmcli /usr/lib/tdmcli/
+else
+    mkdir /usr/lib/tdmcli
+    cp $dir/*.py /usr/lib/tdmcli/
+    cp $dir/tdmcli /usr/lib/tdmcli/
+fi
+cd /usr/lib/tdmcli
+rm -rf .git
+rm config-example.py
+cp $dir/bin/tdmcli /usr/bin

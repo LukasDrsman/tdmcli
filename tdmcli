@@ -1,0 +1,55 @@
+#!/usr/bin/python3
+import os
+from tdman import *
+from config import *
+import sys
+
+
+
+dfile = os.path.expanduser(deffile)
+dpath = os.path.expanduser(defpath)
+if(os.path.isfile(dfile) != True):
+    notes = open(dfile, "w")
+    notes.close()
+tdl = Todolist(dfile, dpath)
+
+fwparam = {
+    "new" : tdl.new,
+    "n" : tdl.new,
+    "remove" : tdl.remove,
+    "rm" : tdl.remove,
+    "date" : tdl.cdate,
+    "d" : tdl.cdate,
+    "sort" : tdl.order,
+    "s" : tdl.order
+}
+fwoparam = {
+    "clear" : tdl.clear,
+    "cl" : tdl.clear,
+    "write" : tdl.save,
+    "w" : tdl.save,
+    "quit" : tdl.quit,
+    "q" : tdl.quit,
+    "exit" : tdl.quit,
+    "x" : tdl.quit,
+    "load" : tdl.cfile,
+    "l" : tdl.cfile,
+}
+tdl.parse()
+tdl.show()
+
+while(True):
+    usrin = input(prompt)
+    if(" " in usrin):
+        cmd, param = usrin.strip().split(' ', 1)
+    else:
+        cmd = usrin
+        param = ""
+    cmd.lower()
+    if(param.strip() == "" and cmd in fwoparam):
+        fwoparam[cmd]()
+    elif(cmd in fwparam):
+        fwparam[cmd](param)
+    else:
+        tdl.cflag(cmd, param)
+    tdl.show()
