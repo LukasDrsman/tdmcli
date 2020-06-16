@@ -55,6 +55,7 @@ tdmcli
 
 #### Format:
 
+*something.tdff*
 ```
 task::flag::date
 task::flag
@@ -63,14 +64,15 @@ task::flag
 * flag - defines the state of the task
 * date - optional, format: ```Y-m-d-H-M```
 * :: - delimiter
+* .tdff - file extension
 
 #### Example (using default config):
-*this:*
+*todo.tdff*
 ```
 new task::n
 task with date::n::2020-6-19-13-35
 important task::i
 done::d
 ```
-*will render as:* <br>
+will render as: <br>
 ![preview](https://github.com/LukasDrsman/tdmcli/blob/master/preview.png)
