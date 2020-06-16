@@ -27,10 +27,11 @@ tdmcli
 |quit      |q       |exits program            | |
 |exit      |x       |exits program            | |
 |date      |d       |sets deadline            |task number|
-|*check     |*cc      |marks task as done       |task number|
-|*uncheck   |*uc      |marks task as not done   |task number|
-|*important |*i       |marks task as important  |task number|
 |sort      |s       |sorts todolist           |sorting parameters|
+|\*check     |\*cc      |marks task as done       |task number|
+|\*uncheck   |\*uc      |marks task as not done   |task number|
+|\*important |\*i       |marks task as important  |task number|
+
 
 \* - can be modified by user
 
@@ -71,5 +72,5 @@ task with date::n::2020-6-19-13-35
 important task::i
 done::d
 ```
-would render as:
+willl render as: <br>
 ![preview](https://github.com/LukasDrsman/tdmcli/blob/master/preview.png)
