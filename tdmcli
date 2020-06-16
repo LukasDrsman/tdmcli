@@ -4,8 +4,6 @@ from tdman import *
 from config import *
 import sys
 
-
-
 dfile = os.path.expanduser(deffile)
 dpath = os.path.expanduser(defpath)
 if(os.path.isfile(dfile) != True):
