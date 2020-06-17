@@ -13,21 +13,21 @@ class Todolist:
     def cfile(self):
         if(writeonexit == True):
             self.save()
-        todos = os.listdir(os.path.expanduser(defpath))
-        for i in range(len(todos)):
-            print(" ["+str(i)+"] " + (todos[i].split("."))[0])
+        todofiles = os.listdir(os.path.expanduser(defpath))
+        for i in range(len(todofiles)):
+            print(" ["+str(i)+"] " + (todofiles[i].split("."))[0])
         select = input("(number or name) " + prompt)
         try:
             select = int(select)
             try:
-                self.file = os.path.expanduser(defpath) + todos[select]
+                self.file = os.path.expanduser(defpath) + todofiles[select]
             except:
                 self.file = os.path.expanduser(deffile)
         except:
             self.file = os.path.expanduser(defpath) + select + ".tdff"
             if(os.path.isfile(self.file) != True):
-                file = open(self.file, "w")
-                file.close()
+                todofile = open(self.file, "w")
+                todofile.close()
         self.parse()
 
     def parse(self):
@@ -147,11 +147,11 @@ class Todolist:
         todofile.write("")
         todofile.close()
         todofile = open(self.file, 'a')
-        for i in range(len(self.todo)):
-            if(type(self.todo[i][2]) is datetime):
-                todofile.write(self.todo[i][0] + "::" + self.todo[i][1] + "::" + self.todo[i][2].strftime('%Y-%m-%d-%H-%M') + "\n")
+        for task in self.todo:
+            if(type(task[2]) is datetime):
+                todofile.write(task[0] + "::" + task[1] + "::" + task[2].strftime('%Y-%m-%d-%H-%M') + "\n")
             else:
-                todofile.write(self.todo[i][0] + "::" + self.todo[i][1] + "\n")
+                todofile.write(task[0] + "::" + task[1] + "\n")
         todofile.close()
 
     def quit(self):
