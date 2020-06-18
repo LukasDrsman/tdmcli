@@ -3,6 +3,7 @@
 <br/>
 ## Installation
 #### Requirements:
+* terminal emulator (with support for ansi escape codes)
 * python3
 
 #### Install and run:
