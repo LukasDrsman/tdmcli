@@ -55,14 +55,14 @@ class Todolist:
                 num = task + 1
                 print(lnnumf % num, end="")
             for flag in flags:
-                if(self.todo[task][1] == flag[0]):
-                    if(type(self.todo[task][2]) is datetime and (flag[4] == True or self.todo[task][2] > self.today)):
-                        print(flag[2] + flag[1] + flag[3] + self.todo[task][0] + end + "  ~  " + self.todo[task][2].strftime(dateformat))
-                    elif(type(self.todo[task][2]) is datetime and (flag[4] == False and self.todo[task][2] <= self.today)):
-                        print(flag[2] + flag[1] + red + self.todo[task][0] + end + "  ~  " + self.todo[task][2].strftime(dateformat))
-                    else:
-                        print(flag[2] + flag[1] + flag[3] + self.todo[task][0] + end)
-                    break
+                    if(self.todo[task][1] == flag[0]):
+                        if(type(self.todo[task][2]) is datetime and (flag[4] == True or self.todo[task][2] > self.today)):
+                            print(flag[2] + flag[1] + flag[3] + self.todo[task][0] + end + "  ~  " + self.todo[task][2].strftime(dateformat))
+                        elif(type(self.todo[task][2]) is datetime and (flag[4] == False and self.todo[task][2] <= self.today)):
+                            print(flag[2] + flag[1] + red + self.todo[task][0] + end + "  ~  " + self.todo[task][2].strftime(dateformat))
+                        else:
+                            print(flag[2] + flag[1] + flag[3] + self.todo[task][0] + end)
+                        break
         print(" ")
 
     def new(self, param):
